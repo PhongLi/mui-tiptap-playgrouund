@@ -1,0 +1,12 @@
+{
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "endOfLine": "auto",
+    "semi": false,
+    "tabWidth": 4,
+    "arrowParens": "avoid",
+    "useTabs": false,
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "proseWrap": "preserve"
+}
