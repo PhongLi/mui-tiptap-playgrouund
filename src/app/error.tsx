@@ -2,7 +2,8 @@
 'use client' // Error components must be Client Components
 
 import WarningIcon from '@mui/icons-material/Warning'
-import { Box, Button } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
+import Link from 'next/link'
 
 export default function Error({
     error,
@@ -12,25 +13,32 @@ export default function Error({
     reset: () => void
 }) {
     return (
-        <main>
-            <section>
-                <Box sx={{ textAlign: 'center' }}>
-                    <WarningIcon />
-                    <h1>Oops, something went wrong!</h1>
-                    <h5>change this in app/error.tsx</h5>
-                    <h4>{error.message}</h4>
-                    <Box sx={{ m: 5 }}>
-                        <Button onClick={reset}>Try again</Button>
-                    </Box>
-                    <a href='/?slug=homepage'>Back to home</a>
-                    <div>
-                        <img
-                            src='https://img.freepik.com/free-vector/500-internal-server-error-concept-illustration_114360-1905.jpg'
-                            alt='500'
-                        />
-                    </div>
-                </Box>
-            </section>
-        </main>
+        <Box
+            sx={{
+                textAlign: 'center',
+                bgcolor: 'background.paper',
+                py: 10,
+                height: '100vh',
+            }}
+        >
+            <WarningIcon color='error' fontSize='large' />
+            <Typography variant='h3'>Oops, something went wrong!</Typography>
+            <Typography variant='h6' color='error'>
+                {error.message}
+            </Typography>
+            <Box sx={{ m: 5 }}>
+                <Button variant='contained' onClick={reset}>
+                    Try again
+                </Button>
+            </Box>
+            <Link href='/?slug=homepage'>Back to home</Link>
+            <Stack sx={{ justifyContent: 'center', alignItems: 'center' }}>
+                <img
+                    src='https://img.freepik.com/free-vector/500-internal-server-error-concept-illustration_114360-1905.jpg'
+                    alt='500'
+                    width={400}
+                />
+            </Stack>
+        </Box>
     )
 }

@@ -1,4 +1,9 @@
 {
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
   // configuration for javascript files
   "extends": [
     "next/core-web-vitals", // needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
