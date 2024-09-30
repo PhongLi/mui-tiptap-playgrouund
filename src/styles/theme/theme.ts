@@ -5,9 +5,10 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
 import { DARK } from '@/constants/theme'
 
+import palette from './config/palette';
+import shadows, { customShadows } from './config/shadows';
+import typography from './config/typography';
 import OverrideComponents from './overrideComponents';
-import palette from './palette';
-import typography from './typography';
 
 // Create a theme instance.
 const lightTheme: ThemeOptions  = {
@@ -16,6 +17,9 @@ const lightTheme: ThemeOptions  = {
     ...palette.light
   },
   typography: {...typography},
+  shadows:   shadows.light,
+  customShadows:  customShadows.light,
+
   spacing: (factor: number) => `${0.5 * factor}rem`,
 }
 
@@ -24,6 +28,9 @@ const darkTheme: ThemeOptions  = {
     mode: 'dark',
     ...palette.dark
   },
+  typography: {...typography},
+  shadows:  shadows.dark ,
+  customShadows:  customShadows.dark ,
   spacing: (factor: number) => `${0.5 * factor}rem`,
 }
 

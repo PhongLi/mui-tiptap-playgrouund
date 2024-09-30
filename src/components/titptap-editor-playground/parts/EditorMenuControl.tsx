@@ -2,10 +2,10 @@ import { Divider } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 
 import {
-    MenuButtonAlignCenter,
     MenuButtonBlockquote,
     MenuButtonBold,
     MenuButtonBulletedList,
+    MenuButtonCode,
     MenuButtonHighlightColor,
     MenuButtonIndent,
     MenuButtonRedo,
@@ -24,6 +24,10 @@ import {
     MenuSelectHeading,
     MenuSelectTextAlign,
 } from '@/controls'
+import MenuButtonEditLink from '@/controls/MenuButtonEditLink'
+import MenuButtonHorizontalRule from '@/controls/MenuButtonHorizontalRule'
+import MenuButtonItalic from '@/controls/MenuButtonItalic'
+import MenuButtonOrderedList from '@/controls/MenuButtonOrderedList'
 
 const MenuDivider = styled(props => (
     <Divider orientation='vertical' {...props} />
@@ -36,10 +40,6 @@ export default function EditorMenuControls() {
     const theme = useTheme()
     return (
         <MenuControlsContainer>
-            <MenuDivider />
-            <MenuSelectHeading />
-            <MenuDivider />
-
             <MenuSelectFontFamily
                 options={[
                     { label: 'Comic Sans', value: 'Comic Sans MS, Comic Sans' },
@@ -49,28 +49,19 @@ export default function EditorMenuControls() {
                 ]}
             />
             <MenuDivider />
+            <MenuSelectHeading />
 
-            <MenuSelectFontSize />
             <MenuDivider />
+            <MenuSelectFontSize />
+
+            <MenuDivider />
+            <MenuButtonBold />
+            <MenuButtonItalic />
+            <MenuButtonUnderline />
             <MenuButtonStrikethrough />
-
             <MenuButtonSubscript />
-
             <MenuButtonSuperscript />
 
-            <MenuButtonBlockquote />
-            <MenuButtonBold />
-            <MenuButtonBulletedList />
-            <MenuButtonTaskList />
-
-            <MenuButtonUnderline />
-            <MenuDivider />
-
-            <MenuButtonIndent />
-            <MenuButtonUnindent />
-
-            <MenuSelectTextAlign />
-            <MenuButtonAlignCenter />
             <MenuDivider />
             <MenuButtonTextColor
                 defaultTextColor={theme.palette.text.primary}
@@ -99,9 +90,32 @@ export default function EditorMenuControls() {
                 ]}
             />
             <MenuDivider />
-            <MenuButtonRemoveFormatting />
+            <MenuButtonEditLink />
+
             <MenuDivider />
 
+            <MenuSelectTextAlign />
+
+            <MenuDivider />
+            <MenuButtonOrderedList />
+            <MenuButtonBulletedList />
+            <MenuButtonTaskList />
+
+            <MenuDivider />
+            <MenuButtonIndent />
+            <MenuButtonUnindent />
+
+            <MenuDivider />
+            <MenuButtonCode />
+            <MenuButtonBlockquote />
+
+            <MenuDivider />
+            {/* image */}
+            <MenuDivider />
+            <MenuButtonHorizontalRule />
+
+            <MenuButtonRemoveFormatting />
+            <MenuDivider />
             <MenuButtonUndo />
             <MenuButtonRedo />
         </MenuControlsContainer>

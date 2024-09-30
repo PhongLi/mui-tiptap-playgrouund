@@ -9,6 +9,7 @@ import { useRef, useState } from 'react'
 import MenuButton from '@/controls/MenuButton'
 import useExtensions from '@/hooks/useExtensions'
 
+import LinkBubbleMenu from '../LinkBubbleMenu'
 import type { RichTextEditorRef } from '../RichTextEditor'
 import RichTextEditor from '../RichTextEditor'
 import EditorMenuControls from './parts/EditorMenuControl'
@@ -120,12 +121,12 @@ function TiptapEditorPlayground(): JSX.Element {
                         ),
                     }}
                 >
-                    {/* {() => (
+                    {() => (
                         <>
                             <LinkBubbleMenu />
-                            <TableBubbleMenu />
+                            {/* <TableBubbleMenu /> */}
                         </>
-                    )} */}
+                    )}
                 </RichTextEditor>
             </Box>
         </Container>

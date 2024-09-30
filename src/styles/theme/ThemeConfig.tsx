@@ -63,7 +63,6 @@ export const ThemeConfig: React.FC<{children: React.ReactNode}> = ({ children })
   return (
   <ThemeContext.Provider value={themeConfig}>
     <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
           {children}
       </ThemeProvider>

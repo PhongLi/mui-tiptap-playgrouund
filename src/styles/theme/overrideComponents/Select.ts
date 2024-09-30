@@ -1,9 +1,9 @@
-
+import type { Theme } from '@mui/material/styles';
+import type { Components } from '@mui/material/styles/components';
 // ----------------------------------------------------------------------
 
-import type { Theme } from "@mui/material/styles";
 
-export default function Select(theme : Theme) {
+export default function Select(theme : Theme): Components {
   return {
     MuiSelect: {
       styleOverrides: {

@@ -1,10 +1,10 @@
-import type { Theme } from '@mui/material/styles';
+import type { Components, Theme } from '@mui/material/styles';
 import { darken } from '@mui/material/styles'
 import { omit } from 'lodash'
 
 import { DARK } from '@/constants/theme'
 
-export default function CssBaseline(theme: Theme) {
+export default function CssBaseline(theme: Theme): Components {
   return {
     MuiCssBaseline: {
       styleOverrides: {

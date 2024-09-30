@@ -1,8 +1,8 @@
 import { menuItemClasses } from "@mui/material";
-import type { Theme } from "@mui/material/styles";
+import type { Theme } from '@mui/material/styles';
+import type { Components } from '@mui/material/styles/components';
 
-
-export default function MenuItem(theme: Theme) {
+export default function MenuItem(theme: Theme): Components {
   return {
     MuiMenuItem: {
         styleOverrides: {
