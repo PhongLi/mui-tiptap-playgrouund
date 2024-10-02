@@ -1,5 +1,8 @@
 
-<h1 align="center">MUI TIPTAP PLAYGROUND</h1>
+<a href="mui-tiptap-playground.vercel.app/">
+  <img alt="MUI TIPTAP PLAYGROUND" src="https://raw.githubusercontent.com/PhongLi/mui-tiptap-playground/refs/heads/main/public/images/demo.png">
+ <h1 align="center">MUI TIPTAP PLAYGROUND</h1>
+</a>
 <p align="center">
  <b>mui-tiptap-playgrouund</b>: A customizable <a href="https://mui.com/material-ui/getting-started/overview/">Material UI</a> styled WYSIWYG rich text editor, using <a href="https://tiptap.dev/">Tiptap</a>.
 </p>
