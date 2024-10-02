@@ -49,7 +49,6 @@ yarn dev
 
 - [ ] Image, Video Upload
 - [ ] Import and Export Word, Pdf
-- [ ] Earth (Orbit/Moon)
 - [ ] Excalidraw: allows you to add an Excalidraw to your editor
 - [ ] Katex: allows you to add Katex math equations
 - [ ] Table Of Contents
