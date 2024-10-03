@@ -28,6 +28,7 @@ import MenuButtonEditLink from '@/controls/MenuButtonEditLink'
 import MenuButtonHorizontalRule from '@/controls/MenuButtonHorizontalRule'
 import MenuButtonItalic from '@/controls/MenuButtonItalic'
 import MenuButtonOrderedList from '@/controls/MenuButtonOrderedList'
+import MenuButtonAddTable from '@/controls/Table/MenuButtonAddTable'
 
 const MenuDivider = styled(props => (
     <Divider orientation='vertical' {...props} />
@@ -113,6 +114,10 @@ export default function EditorMenuControls() {
             {/* image */}
             <MenuDivider />
             <MenuButtonHorizontalRule />
+
+            <MenuDivider />
+            <MenuButtonAddTable />
+            <MenuDivider />
 
             <MenuButtonRemoveFormatting />
             <MenuDivider />

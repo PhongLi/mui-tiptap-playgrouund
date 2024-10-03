@@ -28,10 +28,6 @@ export type MenuControlsContainerProps = {
      * to check a lot of editor state, with `editor.can()` commands and whatnot.
      */
     debounced?: boolean
-    /**
-     * Override the props/options used with debounce rendering such as the wait
-     * interval, if `debounced` is true.
-     */
     DebounceProps?: Except<DebounceRenderProps, 'children'>
 }
 
@@ -40,8 +36,13 @@ export default function MenuControlsContainer({
     className,
     debounced,
     DebounceProps,
+    ...containerProps
 }: MenuControlsContainerProps) {
-    const content = <StyledRoot className={className}>{children}</StyledRoot>
+    const content = (
+        <StyledRoot className={className} {...containerProps}>
+            {children}
+        </StyledRoot>
+    )
     return debounced ? (
         <DebounceRender {...DebounceProps}>{content}</DebounceRender>
     ) : (

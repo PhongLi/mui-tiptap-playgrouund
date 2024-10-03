@@ -815,25 +815,25 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-superscript/-/extension-superscript-2.7.4.tgz"
   integrity sha512-AFYvbVCkOsix+2QVTl036LJeMpNNJT/XOCnxcCaWUeVwNKxrLxlGLzwrNqCC7hW6eYd73/Ht4+mzGIAGM78PPA==
 
-"@tiptap/extension-table-cell@^2.6.6":
-  version "2.7.4"
-  resolved "https://registry.npmjs.org/@tiptap/extension-table-cell/-/extension-table-cell-2.7.4.tgz"
-  integrity sha512-8/mM0lv8k6dRBjGHNh9HIGNaRuq+A/7h699GC7A9xuE7R1/xjDMKRZpPTmvogqfAq2U6mH16oxr/KpBuixji1w==
+"@tiptap/extension-table-cell@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-table-cell/-/extension-table-cell-2.8.0.tgz#8648c2e8cd22693c315f4e3fe55e4b73ed98edb1"
+  integrity sha512-IZpxONWyOd474L8+k4bHrFNRhbsl9eRwbNs5O877JkVFItc2WUz1DIhbJzjmBRsqExtWQJuOsiqWFab1kpiwGQ==
 
-"@tiptap/extension-table-header@^2.6.6":
-  version "2.7.4"
-  resolved "https://registry.npmjs.org/@tiptap/extension-table-header/-/extension-table-header-2.7.4.tgz"
-  integrity sha512-ZChahHwx0WlPynbMc4zsIgAAOar695A1AYTkWes7Y454xJy1vkGw607w+DVEHCWxU5h943H2UF7DUgzQS9XbAg==
+"@tiptap/extension-table-header@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-table-header/-/extension-table-header-2.8.0.tgz#f59b792cc01623250ab4ebfedf3d3d1b43fd5ddb"
+  integrity sha512-B67A96yMQlG96IFzZBc7D5dnn7O29hcjuDLtjyZkKvU5D/RlFKPMmC9nVphCV3CnbkvEOZUdK9pNaOpen64naw==
 
-"@tiptap/extension-table-row@^2.6.6":
-  version "2.7.4"
-  resolved "https://registry.npmjs.org/@tiptap/extension-table-row/-/extension-table-row-2.7.4.tgz"
-  integrity sha512-JxR6PdLiXUjW8VC7YdVSIvd8D7RKVOPPPK7cFrawxS4tKz+1temsK8hNZ3RKhajwS5ya4IRT+iKhSRetVnjuww==
+"@tiptap/extension-table-row@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-table-row/-/extension-table-row-2.8.0.tgz#a15689d3544500bd9de9ee52e8299eb88ce50cdb"
+  integrity sha512-Iezej6l7X+WqKzGLmCgAwmpL+QsfjFv1g8yVH5d0/3Pkcj3G9nDn+GSm4bZnbfYFyqInHG94PZ5PMReiALrJtA==
 
-"@tiptap/extension-table@^2.6.6":
-  version "2.7.4"
-  resolved "https://registry.npmjs.org/@tiptap/extension-table/-/extension-table-2.7.4.tgz"
-  integrity sha512-zL9BKQFJDGkwKnr1MYzCfpBllhlL8pDR3Sf5WscbN66I+rXrAdpFl75AbWf7gE0Tk2YaJldshFkakgWN1tr+2A==
+"@tiptap/extension-table@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-table/-/extension-table-2.8.0.tgz#e1693476ff9d2950ffe5d053b24ac8ab670b86e2"
+  integrity sha512-dm9CitjacXyJuE5SZfV2lUc3uOiP2sxo6fygIzMz7iuxHqQueyONWG+TBkK7HjqzXOiMPsvOf/25NazzIG8HMg==
 
 "@tiptap/extension-task-item@^2.6.6":
   version "2.7.4"
@@ -4102,7 +4102,7 @@ tinyexec@^0.3.0:
 
 tippy.js@^6.3.7:
   version "6.3.7"
-  resolved "https://registry.npmjs.org/tippy.js/-/tippy.js-6.3.7.tgz"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.7.tgz#8ccfb651d642010ed9a32ff29b0e9e19c5b8c61c"
   integrity sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==
   dependencies:
     "@popperjs/core" "^2.9.0"

@@ -12,6 +12,7 @@ import useExtensions from '@/hooks/useExtensions'
 import LinkBubbleMenu from '../LinkBubbleMenu'
 import type { RichTextEditorRef } from '../RichTextEditor'
 import RichTextEditor from '../RichTextEditor'
+import TableBubbleMenu from '../TableBubbleMenu'
 import EditorMenuControls from './parts/EditorMenuControl'
 import { SourceGithub } from './parts/SourceGithub'
 
@@ -124,7 +125,7 @@ function TiptapEditorPlayground(): JSX.Element {
                     {() => (
                         <>
                             <LinkBubbleMenu />
-                            {/* <TableBubbleMenu /> */}
+                            <TableBubbleMenu />
                         </>
                     )}
                 </RichTextEditor>

@@ -67,7 +67,6 @@ export function MenuButtonColorPicker({
     const { IconComponent, children, ...otherMenuButtonProps } = menuButtonProps
 
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
-
     const handleClose = () => setAnchorEl(null)
     return (
         <>

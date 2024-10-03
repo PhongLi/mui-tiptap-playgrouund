@@ -100,7 +100,6 @@ export default function LinkBubbleMenu({
         )
     }
 
-    console.log(linkMenuContent)
     return (
         <ControlledBubbleMenu
             editor={editor}

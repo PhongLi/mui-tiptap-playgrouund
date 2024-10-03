@@ -37,6 +37,8 @@ import { useMemo } from 'react'
 import FontSize from '@/extensions/FontSize'
 import { Indent } from '@/extensions/Indent'
 import LinkBubbleMenuHandler from '@/extensions/LinkBubbleMenuHandler'
+import Table from '@/extensions/Table/Table'
+import { TableCellBackground } from '@/extensions/Table/TableCellBackground'
 export type UseExtensionsOptions = {
     placeholder?: string
 }
@@ -76,11 +78,16 @@ export default function useExtensions({
 }: UseExtensionsOptions): EditorOptions['extensions'] {
     return useMemo(() => {
         return [
-            CustomSubscript,
-            CustomSuperscript,
+            Table.configure({
+                resizable: true,
+            }),
+            TableCellBackground,
             TableRow,
             TableHeader,
             TableCell,
+
+            CustomSubscript,
+            CustomSuperscript,
 
             BulletList,
             CodeBlock,

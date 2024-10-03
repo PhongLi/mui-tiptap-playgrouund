@@ -201,14 +201,6 @@ export const getOutdent: (
             return false
         }
         if (
-            /**
-             * editor.state.selection.$head.parentOffset > 0があるのは
-             * ```
-             * - Hello
-             * |<<ここにカーソル
-             * ```
-             * この状態でBackSpaceを繰り返すとlistItemのtoggleが繰り返されるのを防ぐため
-             */
             (!outdentOnlyAtHead ||
                 editor.state.selection.$head.parentOffset > 0) &&
             editor.can().liftListItem('listItem')
