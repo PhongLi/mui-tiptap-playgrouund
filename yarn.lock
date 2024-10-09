@@ -845,10 +845,10 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-task-list/-/extension-task-list-2.7.4.tgz"
   integrity sha512-VlF2/xhpkrNZjdi9R5Bex2OjKujkwg27GoMSlJJ67TetBs/fPNUFjbf2k6A26oAK0lMYyt1iYaKwql2O80xGsw==
 
-"@tiptap/extension-text-align@^2.7.2":
-  version "2.7.4"
-  resolved "https://registry.npmjs.org/@tiptap/extension-text-align/-/extension-text-align-2.7.4.tgz"
-  integrity sha512-/zJFhFko6yztjVlXL+Rpb4cpfSHydtFXkj+eto3Mjs0r+xzAsgP7WmQU2oTq482X1uvbfHD9u9SGSKH4jPcmig==
+"@tiptap/extension-text-align@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-text-align/-/extension-text-align-2.8.0.tgz#831f0e1adf14f48be35a57b40e6e680ca69c53d3"
+  integrity sha512-Y6s/DF+P4lxpAnvSrnmt4xGwQT/AJJJm0aA1wu5GuPKpAQ+K4C7K6rE6uGNAXtR39GlewC7KdmcvA+CYhL8xlw==
 
 "@tiptap/extension-text-style@^2.6.6":
   version "2.7.4"

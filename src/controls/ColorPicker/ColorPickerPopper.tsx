@@ -1,3 +1,5 @@
+import AddIcon from '@mui/icons-material/Add'
+import FormatColorResetIcon from '@mui/icons-material/FormatColorReset'
 import {
     Button,
     ClickAwayListener,
@@ -81,30 +83,37 @@ export function ColorPickerPopperBody({
             <Stack
                 direction='row'
                 justifyContent='space-between'
+                spacing={1}
                 sx={{ mt: 1 }}
             >
                 <Tooltip title={removeColorButtonTooltipTitle} arrow>
                     <Button
+                        fullWidth
+                        variant='outlined'
                         onClick={() => {
                             // No color being specified can mean "none" in some scenarios
                             // (e.g. highlighting) and "default color"/reset in others (text)
                             onSave('')
                         }}
                         size='small'
+                        startIcon={<FormatColorResetIcon />}
                     >
                         {removeColorButton}
                     </Button>
                 </Tooltip>
 
-                <Button onClick={onCancel} size='small'>
+                {/* <Button onClick={onCancel} size='small'>
                     {cancelButton}
-                </Button>
+                </Button> */}
 
                 <Button
+                    fullWidth
+                    variant='contained'
                     onClick={() => {
                         onSave(localColor)
                     }}
                     size='small'
+                    startIcon={<AddIcon />}
                 >
                     {saveButton}
                 </Button>

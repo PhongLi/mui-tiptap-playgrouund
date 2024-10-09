@@ -158,15 +158,15 @@ export default function TableMenuControls({
                 value={selectedColor}
                 onChange={newColor => {
                     if (newColor) {
-                        setSelectedColor(newColor)
                         editor
                             ?.chain()
                             .focus()
                             .setTableCellBackground(newColor)
                             .run()
+                        setSelectedColor(newColor)
                     } else {
-                        setSelectedColor(undefined)
                         editor?.chain().focus().unsetTableCellBackground().run()
+                        setSelectedColor(undefined)
                     }
                 }}
                 disabled={!editor?.isEditable}

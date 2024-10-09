@@ -109,11 +109,10 @@ export default function useExtensions({
             }),
             LinkBubbleMenuHandler,
 
-            // Extensions
             Indent,
             Gapcursor,
             TextAlign.configure({
-                types: ['heading', 'paragraph', 'image'],
+                types: ['paragraph', 'heading'],
             }),
             TextStyle,
             Color,
