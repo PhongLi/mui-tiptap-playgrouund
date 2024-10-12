@@ -81,7 +81,6 @@ const RichTextEditor = forwardRef<RichTextEditorRef, RichTextEditorProps>(
             RichTextFieldProps = {},
             children,
             editorDependencies = [],
-            // We default to `editable=true` just like `useEditor` does
             editable = true,
             ...editorOptions
         }: RichTextEditorProps,

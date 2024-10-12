@@ -85,7 +85,8 @@ const StyledRoot = styled(Box)(({ theme }) => ({
     },
     [`&.${classes.outlined}`]: {
         padding: theme.spacing(2),
-        border: '1px solid #ccc',
+        border: '1px solid',
+        borderColor: theme.palette.grey[500],
     },
     [`&.${classes.standard}`]: {
         padding: theme.spacing(1.5, 0),
@@ -114,6 +115,8 @@ const StyledFieldContent = styled(EditorContent)(() => ({
     width: '100%',
     borderRadius: 5,
     tabSize: 1,
+    maxHeight: 500,
+    overflow: 'auto',
     '& .ProseMirror': {
         outline: 'none',
     },

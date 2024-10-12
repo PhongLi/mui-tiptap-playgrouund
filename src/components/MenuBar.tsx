@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Collapse } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import clsx from 'clsx'
 
@@ -6,6 +6,7 @@ import { Z_INDEXES } from '@/constants/theme'
 import DebounceRender from '@/utils/DebounceRender'
 
 export type MenuBarProps = {
+    hide?: boolean
     className?: string
     disableSticky?: boolean
     stickyOffset?: number
@@ -19,7 +20,7 @@ const classes = {
     nonSticky: `${classPrefix}-nonSticky`,
 }
 
-const StyledRoot = styled(Box)(({ theme }) => ({
+const StyledRoot = styled(Collapse)(({ theme }) => ({
     borderBottomColor: theme.palette.divider,
     borderBottomStyle: 'solid',
     borderBottomWidth: 1,
@@ -32,6 +33,7 @@ const StyledRoot = styled(Box)(({ theme }) => ({
 }))
 
 function MenuBar({
+    hide,
     className,
     disableSticky,
     stickyOffset,
@@ -39,6 +41,8 @@ function MenuBar({
 }: MenuBarProps) {
     return (
         <StyledRoot
+            in={!hide}
+            unmountOnExit
             className={clsx(
                 classes.root,
                 className,

@@ -3,16 +3,18 @@
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import TextFields from '@mui/icons-material/TextFields'
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Container, Stack, Typography } from '@mui/material'
 import { useRef, useState } from 'react'
 
 import MenuButton from '@/controls/MenuButton'
 import useExtensions from '@/hooks/useExtensions'
+import printPrettyHTML from '@/utils/printPrettifyHTML'
 
 import LinkBubbleMenu from '../LinkBubbleMenu'
 import type { RichTextEditorRef } from '../RichTextEditor'
 import RichTextEditor from '../RichTextEditor'
 import TableBubbleMenu from '../TableBubbleMenu'
+import { DOMViewer } from './parts/DOMViewer'
 import EditorMenuControls from './parts/EditorMenuControl'
 import { SourceGithub } from './parts/SourceGithub'
 
@@ -21,18 +23,21 @@ const exampleContent =
 
 function TiptapEditorPlayground(): JSX.Element {
     const rteRef = useRef<RichTextEditorRef>(null)
+
     const [isEditable, setIsEditable] = useState(true)
     const [showMenuBar, setShowMenuBar] = useState(true)
+    const initialDOMContent = printPrettyHTML(exampleContent)
+    const [DOMContent, setDOMContent] = useState(initialDOMContent)
 
     const extensions = useExtensions({
         placeholder: 'Add your own content here...',
     })
 
     return (
-        <Container sx={{ my: 3 }}>
+        <Container sx={{ mt: 2, pb: 10 }}>
             <SourceGithub url='https://github.com/PhongLi/mui-tiptap-playground' />
             <Typography
-                variant='h4'
+                variant='h3'
                 sx={{ textAlign: 'center', fontWeight: 'bold', my: 4 }}
             >
                 Tiptap Editor Playground
@@ -50,13 +55,10 @@ function TiptapEditorPlayground(): JSX.Element {
                     // }}
                     renderControls={() => <EditorMenuControls />}
                     RichTextFieldProps={{
-                        // The "outlined" variant is the default (shown here only as
-                        // example), but can be changed to "standard" to remove the outlined
-                        // field border from the editor
                         variant: 'outlined',
-                        // Below is an example of adding a toggle within the outlined field
-                        // for showing/hiding the editor menu bar, and a "submit" button for
-                        // saving/viewing the HTML content
+                        MenuBarProps: {
+                            hide: !showMenuBar,
+                        },
                         footer: (
                             <Stack
                                 direction='row'
@@ -71,11 +73,11 @@ function TiptapEditorPlayground(): JSX.Element {
                                 }}
                             >
                                 <MenuButton
-                                    value='formatting'
+                                    value='menubar'
                                     tooltipLabel={
                                         showMenuBar
-                                            ? 'Hide formatting'
-                                            : 'Show formatting'
+                                            ? 'Hide menubar'
+                                            : 'Show menubar'
                                     }
                                     size='small'
                                     onClick={() =>
@@ -88,7 +90,7 @@ function TiptapEditorPlayground(): JSX.Element {
                                 />
 
                                 <MenuButton
-                                    value='formatting'
+                                    value='mode'
                                     tooltipLabel={
                                         isEditable
                                             ? 'Prevent edits (use read-only mode)'
@@ -105,21 +107,12 @@ function TiptapEditorPlayground(): JSX.Element {
                                         isEditable ? LockIcon : LockOpenIcon
                                     }
                                 />
-
-                                <Button
-                                    variant='contained'
-                                    size='small'
-                                    // onClick={() => {
-                                    //     setSubmittedContent(
-                                    //         rteRef.current?.editor?.getHTML() ??
-                                    //             '',
-                                    //     )
-                                    // }}
-                                >
-                                    Save
-                                </Button>
                             </Stack>
                         ),
+                    }}
+                    onUpdate={({ editor }) => {
+                        const htmlString = printPrettyHTML(editor.getHTML())
+                        setDOMContent(htmlString)
                     }}
                 >
                     {() => (
@@ -130,6 +123,7 @@ function TiptapEditorPlayground(): JSX.Element {
                     )}
                 </RichTextEditor>
             </Box>
+            <DOMViewer htmlString={DOMContent} />
         </Container>
     )
 }
