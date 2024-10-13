@@ -29,7 +29,7 @@ type IndentOptions = {
     defaultIndentLevel: number
     HTMLAttributes: Record<string, any>
 }
-export const Indent = Extension.create<IndentOptions, never>({
+const Indent = Extension.create<IndentOptions, never>({
     name: 'indent',
 
     addOptions() {
@@ -121,6 +121,8 @@ export const Indent = Extension.create<IndentOptions, never>({
         }
     },
 })
+
+export default Indent
 
 export const clamp = (val: number, min: number, max: number): number => {
     if (val < min) {

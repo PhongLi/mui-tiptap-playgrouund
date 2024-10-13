@@ -5,7 +5,6 @@ import BulletList from '@tiptap/extension-bullet-list'
 import Code from '@tiptap/extension-code'
 import CodeBlock from '@tiptap/extension-code-block'
 import Color from '@tiptap/extension-color'
-import Document from '@tiptap/extension-document'
 import Dropcursor from '@tiptap/extension-dropcursor'
 import FontFamily from '@tiptap/extension-font-family'
 import Gapcursor from '@tiptap/extension-gapcursor'
@@ -34,34 +33,19 @@ import TextStyle from '@tiptap/extension-text-style'
 import Underline from '@tiptap/extension-underline'
 import { useMemo } from 'react'
 
+//**Custom Extension
+import DBlock from '@/extensions/DBlock/DBlock'
+import Document from '@/extensions/Document'
 import FontSize from '@/extensions/FontSize'
-import { Indent } from '@/extensions/Indent'
+import Indent from '@/extensions/Indent'
 import LinkBubbleMenuHandler from '@/extensions/LinkBubbleMenuHandler'
 import Table from '@/extensions/Table/Table'
-import { TableCellBackground } from '@/extensions/Table/TableCellBackground'
+import TableCellBackground from '@/extensions/Table/TableCellBackground'
+
 export type UseExtensionsOptions = {
     placeholder?: string
 }
 
-// Don't treat the end cursor as "inclusive" of the Link mark, so that users can
-// actually "exit" a link if it's the last element in the editor (see
-// https://tiptap.dev/api/schema#inclusive and
-// https://github.com/ueberdosis/tiptap/issues/2572#issuecomment-1055827817).
-// This also makes the `isActive` behavior somewhat more consistent with
-// `extendMarkRange` (as described here
-// https://github.com/ueberdosis/tiptap/issues/2535), since a link won't be
-// treated as active if the cursor is at the end of the link. One caveat of this
-// approach: it seems that after creating or editing a link with the link menu
-// (as opposed to having a link created via autolink), the next typed character
-// will be part of the link unexpectedly, and subsequent characters will not be.
-// This may have to do with how we're using `insertContent` and `setLink` in
-// the LinkBubbleMenu, but I can't figure out an alternative approach that
-// avoids the issue. This is arguably better than being "stuck" in the link
-// without being able to leave it, but it is still not quite right. See the
-// related open issues here:
-// https://github.com/ueberdosis/tiptap/issues/2571,
-// https://github.com/ueberdosis/tiptap/issues/2572, and
-// https://github.com/ueberdosis/tiptap/issues/514
 const CustomLinkExtension = Link.extend({
     inclusive: false,
 })
@@ -78,6 +62,9 @@ export default function useExtensions({
 }: UseExtensionsOptions): EditorOptions['extensions'] {
     return useMemo(() => {
         return [
+            // Necessary
+            Document,
+            DBlock,
             Table.configure({
                 resizable: true,
             }),
@@ -85,22 +72,16 @@ export default function useExtensions({
             TableRow,
             TableHeader,
             TableCell,
-
-            CustomSubscript,
-            CustomSuperscript,
-
-            BulletList,
-            CodeBlock,
-            Document,
-            HardBreak,
-            ListItem,
-            OrderedList,
             Paragraph,
             Text,
+            Dropcursor,
+            Gapcursor,
+            History,
+            HardBreak,
+
+            // Mark
             Heading,
             Bold,
-            Blockquote,
-            Code,
             Italic,
             Underline,
             Strike,
@@ -108,9 +89,18 @@ export default function useExtensions({
                 openOnClick: false,
             }),
             LinkBubbleMenuHandler,
+            CustomSubscript,
+            CustomSuperscript,
+
+            // Node
+            BulletList,
+            ListItem,
+            CodeBlock,
+            Code,
+            Blockquote,
+            OrderedList,
 
             Indent,
-            Gapcursor,
             TextAlign.configure({
                 types: ['paragraph', 'heading'],
             }),
@@ -121,10 +111,6 @@ export default function useExtensions({
             Highlight.configure({ multicolor: true }),
             HorizontalRule,
 
-            // When images are dragged, we want to show the "drop cursor" for where they'll
-            // land
-            Dropcursor,
-
             TaskList,
             TaskItem.configure({
                 nested: true,
@@ -133,10 +119,6 @@ export default function useExtensions({
             Placeholder.configure({
                 placeholder,
             }),
-
-            // We use the regular `History` (undo/redo) extension when not using
-            // collaborative editing
-            History,
         ]
     }, [placeholder])
 }

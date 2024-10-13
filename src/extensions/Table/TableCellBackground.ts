@@ -80,49 +80,49 @@ export function createCellBackgroundCommand(
 }
 
 // @ts-ignore
-export const TableCellBackground = Extension.create<TableCellBackgroundOptions>(
-    {
-        name: 'tableCellBackground',
-        addOptions() {
-            return {
-                types: ['tableCell'],
-                HTMLAttributes: {},
-            }
-        },
+const TableCellBackground = Extension.create<TableCellBackgroundOptions>({
+    name: 'tableCellBackground',
+    addOptions() {
+        return {
+            types: ['tableCell'],
+            HTMLAttributes: {},
+        }
+    },
 
-        addGlobalAttributes() {
-            return [
-                {
-                    types: this.options.types,
-                    attributes: {
-                        backgroundColor: {
-                            parseHTML: element => {
-                                return element.style.backgroundColor || ''
-                            },
-                            renderHTML: attributes => {
-                                if (
-                                    !attributes.backgroundColor ||
-                                    attributes.backgroundColor === ''
-                                ) {
-                                    return {}
-                                } else {
-                                    return {
-                                        style: `background-color: ${attributes.backgroundColor}`,
-                                    }
+    addGlobalAttributes() {
+        return [
+            {
+                types: this.options.types,
+                attributes: {
+                    backgroundColor: {
+                        parseHTML: element => {
+                            return element.style.backgroundColor || ''
+                        },
+                        renderHTML: attributes => {
+                            if (
+                                !attributes.backgroundColor ||
+                                attributes.backgroundColor === ''
+                            ) {
+                                return {}
+                            } else {
+                                return {
+                                    style: `background-color: ${attributes.backgroundColor}`,
                                 }
-                            },
+                            }
                         },
                     },
                 },
-            ]
-        },
-        addCommands() {
-            return {
-                setTableCellBackground: (backgroundColor: string) =>
-                    createCellBackgroundCommand(backgroundColor, this.options),
-                unsetTableCellBackground: () =>
-                    createCellBackgroundCommand('', this.options),
-            }
-        },
+            },
+        ]
     },
-)
+    addCommands() {
+        return {
+            setTableCellBackground: (backgroundColor: string) =>
+                createCellBackgroundCommand(backgroundColor, this.options),
+            unsetTableCellBackground: () =>
+                createCellBackgroundCommand('', this.options),
+        }
+    },
+})
+
+export default TableCellBackground
