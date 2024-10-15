@@ -3,11 +3,11 @@ import type { Except } from 'type-fest'
 
 import ControlledBubbleMenu, {
     type ControlledBubbleMenuProps,
-} from '@/components/shared/ControlledBubbleMenu'
+} from '@/components/ControlledBubbleMenu'
 import {
     type LinkBubbleMenuHandlerStorage,
     LinkMenuState,
-} from '@/extensions/LinkBubbleMenuHandler'
+} from '@/extensions/Link/LinkBubbleMenuHandler'
 import { useRichTextEditorContext } from '@/store/context'
 
 import EditLinkMenuContent, {

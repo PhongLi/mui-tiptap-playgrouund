@@ -38,7 +38,8 @@ import DBlock from '@/extensions/DBlock/DBlock'
 import Document from '@/extensions/Document'
 import FontSize from '@/extensions/FontSize'
 import Indent from '@/extensions/Indent'
-import LinkBubbleMenuHandler from '@/extensions/LinkBubbleMenuHandler'
+import LinkBubbleMenuHandler from '@/extensions/Link/LinkBubbleMenuHandler'
+import Mention from '@/extensions/Mention/Mention'
 import Table from '@/extensions/Table/Table'
 import TableCellBackground from '@/extensions/Table/TableCellBackground'
 
@@ -115,7 +116,7 @@ export default function useExtensions({
             TaskItem.configure({
                 nested: true,
             }),
-
+            Mention,
             Placeholder.configure({
                 placeholder,
             }),

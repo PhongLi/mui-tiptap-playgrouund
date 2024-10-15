@@ -1,8 +1,8 @@
 import type { Components, Theme } from '@mui/material/styles';
-import { darken } from '@mui/material/styles'
+import { alpha, darken, lighten } from '@mui/material/styles'
 import { omit } from 'lodash'
 
-import { DARK } from '@/constants/theme'
+import { DARK, Z_INDEXES } from '@/constants/theme'
 
 export default function CssBaseline(theme: Theme): Components {
   return {
@@ -191,6 +191,21 @@ export default function CssBaseline(theme: Theme): Components {
             whiteSpace: 'pre !important'
           },
 
+          '& [data-type="mention"]': {
+            padding: "0 0.25rem",
+            // Setting the line-height here prevents the at-mentions from bumping up against
+            // one another on consecutive lines
+            lineHeight: "1.3em",
+            borderRadius: theme.shape.borderRadius,
+            color: theme.palette.primary.main,
+            background:
+              theme.palette.mode === "dark"
+                ? alpha(darken(theme.palette.primary.dark, 0.7), 0.5)
+                : alpha(lighten(theme.palette.primary.light, 0.6), 0.3),
+            textDecoration: "none",
+          },
+
+
           '& hr': {
             borderWidth: 0,
             borderTopWidth: 'thin',
@@ -283,7 +298,7 @@ export default function CssBaseline(theme: Theme): Components {
           },
 
           '& .selectedCell:after': {
-            zIndex: 1,
+            zIndex: Z_INDEXES.TABLE_ELEMENT,
             position: 'absolute',
             content: '""',
             left: 0,
@@ -301,7 +316,7 @@ export default function CssBaseline(theme: Theme): Components {
               top: -1,
               bottom: -2,
               width: 4,
-              zIndex: 1,
+              zIndex: Z_INDEXES.TABLE_ELEMENT,
               backgroundColor: theme.palette.primary.light,
               pointerEvents: 'none'
             },

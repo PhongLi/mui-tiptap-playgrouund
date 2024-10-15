@@ -785,6 +785,11 @@
   resolved "https://registry.npmjs.org/@tiptap/extension-list-item/-/extension-list-item-2.7.4.tgz"
   integrity sha512-2EiXAtkZdCUHCfYRQsslniQhUzvo8zEm+M6JHcsIRBRf27iE+nXrD6jq1WH2ZIUNLDUs4JsJhtc89aoSYkJGKw==
 
+"@tiptap/extension-mention@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-mention/-/extension-mention-2.8.0.tgz#17014d1c462369c709c2caf90190d6ed057553e9"
+  integrity sha512-WvW98zj4JyomeCcXoORaYkI1gFtfIiVGRzPnZ+bIVphK2gGf1GK7/9asIcPcrOA8B+JJD6bNutSVTqN6Sg/fZw==
+
 "@tiptap/extension-ordered-list@^2.6.6":
   version "2.7.4"
   resolved "https://registry.npmjs.org/@tiptap/extension-ordered-list/-/extension-ordered-list-2.7.4.tgz"

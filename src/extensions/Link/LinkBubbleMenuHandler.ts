@@ -1,7 +1,7 @@
 import { Extension, getAttributes } from '@tiptap/core'
 import { Plugin, PluginKey } from '@tiptap/pm/state'
 
-import type { LinkBubbleMenuProps } from '@/components/LinkBubbleMenu'
+import type { LinkBubbleMenuProps } from '@/extensions/Link/LinkBubbleMenu/LinkBubbleMenu'
 
 declare module '@tiptap/core' {
     interface Commands<ReturnType> {

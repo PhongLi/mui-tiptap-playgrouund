@@ -2,12 +2,17 @@ import { Divider } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 
 import {
+    MenuButtonAddTable,
     MenuButtonBlockquote,
     MenuButtonBold,
     MenuButtonBulletedList,
     MenuButtonCode,
+    MenuButtonEditLink,
     MenuButtonHighlightColor,
+    MenuButtonHorizontalRule,
     MenuButtonIndent,
+    MenuButtonItalic,
+    MenuButtonOrderedList,
     MenuButtonRedo,
     MenuButtonRemoveFormatting,
     MenuButtonStrikethrough,
@@ -24,11 +29,6 @@ import {
     MenuSelectHeading,
     MenuSelectTextAlign,
 } from '@/controls'
-import MenuButtonEditLink from '@/controls/MenuButtonEditLink'
-import MenuButtonHorizontalRule from '@/controls/MenuButtonHorizontalRule'
-import MenuButtonItalic from '@/controls/MenuButtonItalic'
-import MenuButtonOrderedList from '@/controls/MenuButtonOrderedList'
-import MenuButtonAddTable from '@/controls/Table/MenuButtonAddTable'
 
 const MenuDivider = styled(props => (
     <Divider orientation='vertical' {...props} />
@@ -50,20 +50,29 @@ export default function EditorMenuControls() {
                 ]}
             />
             <MenuDivider />
+
             <MenuSelectHeading />
 
             <MenuDivider />
+
             <MenuSelectFontSize />
 
             <MenuDivider />
+
             <MenuButtonBold />
+
             <MenuButtonItalic />
+
             <MenuButtonUnderline />
+
             <MenuButtonStrikethrough />
+
             <MenuButtonSubscript />
+
             <MenuButtonSuperscript />
 
             <MenuDivider />
+
             <MenuButtonTextColor
                 defaultTextColor={theme.palette.text.primary}
                 swatchColors={[
@@ -77,6 +86,7 @@ export default function EditorMenuControls() {
                     { value: '#0000ff', label: 'Blue' },
                 ]}
             />
+
             <MenuButtonHighlightColor
                 swatchColors={[
                     { value: '#595959', label: 'Dark grey' },
@@ -90,7 +100,9 @@ export default function EditorMenuControls() {
                     { value: '#8085e9', label: 'Light purple' },
                 ]}
             />
+
             <MenuDivider />
+
             <MenuButtonEditLink />
 
             <MenuDivider />
@@ -98,30 +110,43 @@ export default function EditorMenuControls() {
             <MenuSelectTextAlign />
 
             <MenuDivider />
+
             <MenuButtonOrderedList />
+
             <MenuButtonBulletedList />
+
             <MenuButtonTaskList />
 
             <MenuDivider />
+
             <MenuButtonIndent />
+
             <MenuButtonUnindent />
 
             <MenuDivider />
+
             <MenuButtonCode />
+
             <MenuButtonBlockquote />
 
             <MenuDivider />
             {/* image */}
             <MenuDivider />
+
             <MenuButtonHorizontalRule />
 
             <MenuDivider />
+
             <MenuButtonAddTable />
+
             <MenuDivider />
 
             <MenuButtonRemoveFormatting />
+
             <MenuDivider />
+
             <MenuButtonUndo />
+
             <MenuButtonRedo />
         </MenuControlsContainer>
     )

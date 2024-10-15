@@ -39,13 +39,29 @@ export {
     type MenuButtonCodeBlockProps,
 } from './MenuButtonCodeBlock'
 export {
+    default as MenuButtonEditLink,
+    type MenuButtonEditLinkProps,
+} from './MenuButtonEditLink'
+export {
     default as MenuButtonHighlightColor,
     type MenuButtonHighlightColorProps,
 } from './MenuButtonHighlightColor'
 export {
+    default as MenuButtonHorizontalRule,
+    type MenuButtonHorizontalRuleProps,
+} from './MenuButtonHorizontalRule'
+export {
     default as MenuButtonIndent,
     type MenuButtonIndentProps,
 } from './MenuButtonIndent'
+export {
+    default as MenuButtonItalic,
+    type MenuButtonItalicProps,
+} from './MenuButtonItalic'
+export {
+    default as MenuButtonOrderedList,
+    type MenuButtonOrderedListProps,
+} from './MenuButtonOrderedList'
 export {
     default as MenuButtonRedo,
     type MenuButtonRedoProps,
@@ -107,3 +123,7 @@ export {
     default as MenuSelectTextAlign,
     type MenuSelectTextAlignProps,
 } from './MenuSelectTextAlign'
+export {
+    default as MenuButtonAddTable,
+    type MenuButtonAddTableProps,
+} from './Table/MenuButtonAddTable'

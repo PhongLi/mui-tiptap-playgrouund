@@ -7,8 +7,8 @@ import {
 import { useMemo } from 'react'
 import type { Except } from 'type-fest'
 
-import type { ControlledBubbleMenuProps } from '@/components/shared/ControlledBubbleMenu'
-import ControlledBubbleMenu from '@/components/shared/ControlledBubbleMenu'
+import type { ControlledBubbleMenuProps } from '@/components/ControlledBubbleMenu'
+import ControlledBubbleMenu from '@/components/ControlledBubbleMenu'
 import type { TableMenuControlsProps } from '@/controls/Table/TableMenuControls'
 import TableMenuControls from '@/controls/Table/TableMenuControls'
 import { useRichTextEditorContext } from '@/store/context'
