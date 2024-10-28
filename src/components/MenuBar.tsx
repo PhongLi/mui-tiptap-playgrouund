@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles'
 import clsx from 'clsx'
 
 import { Z_INDEXES } from '@/constants/theme'
-import DebounceRender from '@/utils/DebounceRender'
 
 export type MenuBarProps = {
     hide?: boolean
@@ -54,7 +53,7 @@ function MenuBar({
                 },
             }}
         >
-            <DebounceRender>{children}</DebounceRender>
+            {children}
         </StyledRoot>
     )
 }

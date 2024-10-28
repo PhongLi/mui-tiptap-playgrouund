@@ -112,7 +112,6 @@ const Indent = Extension.create<IndentOptions, never>({
     },
     onUpdate() {
         const { editor } = this
-        // インデントされたparagraphがlistItemに変更されたらindentをリセット
         if (editor.isActive('listItem')) {
             const node = editor.state.selection.$head.node()
             if (node.attrs.indent) {

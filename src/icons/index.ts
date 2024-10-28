@@ -1,7 +1,6 @@
-// These icons fill some gaps in the @mui/icons-material icon set. We include
-// them directly here rather than importing from an external package to reduce
-// install size and external dependencies (see
-// https://github.com/sjdemartini/mui-tiptap/issues/119).
+export { default as AlignImageCenter } from './AlignImageCenter'
+export { default as AlignImageLeft } from './AlignImageLeft'
+export { default as AlignImageRight } from './AlignImageRight'
 export { default as BorderColorNoBar } from './BorderColorNoBar'
 export { default as CodeBlock } from './CodeBlock'
 export { default as DeleteColumn } from './DeleteColumn'

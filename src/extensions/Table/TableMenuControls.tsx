@@ -4,6 +4,9 @@ import { Divider } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { useState } from 'react'
 
+import { MenuButtonColorPicker } from '@/controls/ColorPicker/MenuButtonColorPicker'
+import MenuButton from '@/controls/MenuButton'
+import MenuControlsContainer from '@/controls/MenuControlsContainer'
 import {
     DeleteColumn,
     DeleteRow,
@@ -18,10 +21,6 @@ import {
     SplitCellsHorizontal,
 } from '@/icons'
 import { useRichTextEditorContext } from '@/store/context'
-
-import { MenuButtonColorPicker } from '../ColorPicker/MenuButtonColorPicker'
-import MenuButton from '../MenuButton'
-import MenuControlsContainer from '../MenuControlsContainer'
 
 export type TableMenuControlsProps = {
     className?: string
@@ -57,7 +56,7 @@ export default function TableMenuControls({
     const [selectedColor, setSelectedColor] = useState<any>(undefined)
 
     return (
-        <MenuControlsContainer className={className}>
+        <MenuControlsContainer debounced className={className}>
             <MenuButton
                 tooltipLabel={
                     labels?.insertColumnBefore ?? 'Insert column before'

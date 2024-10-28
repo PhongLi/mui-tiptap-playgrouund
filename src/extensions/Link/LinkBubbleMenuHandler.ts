@@ -47,10 +47,6 @@ const LinkBubbleMenuHandler = Extension.create<
                 ({ editor, chain, dispatch }) => {
                     const currentMenuState = this.storage.state
 
-                    console.log(
-                        currentMenuState,
-                        LinkMenuState.VIEW_LINK_DETAILS,
-                    )
                     let newMenuState: LinkMenuState
                     if (editor.isActive('link')) {
                         if (

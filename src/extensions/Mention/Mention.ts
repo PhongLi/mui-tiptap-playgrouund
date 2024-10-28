@@ -1,5 +1,5 @@
 import type { MentionOptions } from '@tiptap/extension-mention'
-import BulitInMention from '@tiptap/extension-mention'
+import TiptapMention from '@tiptap/extension-mention'
 import { ReactRenderer } from '@tiptap/react'
 import tippy, { type Instance as TippyInstance } from 'tippy.js'
 
@@ -122,7 +122,7 @@ export const mentionSuggestionOptions: MentionOptions['suggestion'] = {
         }
     },
 }
-const Mention = BulitInMention.extend({}).configure({
+const Mention = TiptapMention.configure({
     HTMLAttributes: {
         class: 'mention',
     },

@@ -334,21 +334,48 @@ export default function CssBaseline(theme: Theme): Components {
               pointerEvents: 'none'
             }
           },
-
+          
+          '@keyframes spin': {
+            '0%': {
+              transform: 'rotate(0deg)'
+            },
+           '100%': {
+              transform: 'rotate(360deg)'
+            }
+          },
           '& .img-placeholder': {
             position: 'relative',
             display: 'inline-block',
-
+            width: 'fit-content',
             '& .img-loading': {
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: alpha(theme.palette.common.white, 0.3),
+                
+                '&:before': {
+                  content: '""',
+                  boxSizing: 'border-box',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '24px',
+                  height: '24px',
+                  margin: '-12px 0 0 -12px',
+                  borderRadius: '50%',
+                  borderWidth: '3px',
+                  borderStyle: 'solid',
+                  borderColor: theme.palette.primary.main,
+                  borderTopColor: 'transparent', 
+                  animation: 'spin 1s linear infinite', 
+            },
+            },
+           
           },
 
           '& .details': {

@@ -37,6 +37,8 @@ import { useMemo } from 'react'
 import DBlock from '@/extensions/DBlock/DBlock'
 import Document from '@/extensions/Document'
 import FontSize from '@/extensions/FontSize'
+import Image from '@/extensions/Image/Image'
+import ImageUpload from '@/extensions/ImageUploader/ImageUpload'
 import Indent from '@/extensions/Indent'
 import LinkBubbleMenuHandler from '@/extensions/Link/LinkBubbleMenuHandler'
 import Mention from '@/extensions/Mention/Mention'
@@ -111,6 +113,17 @@ export default function useExtensions({
             FontSize,
             Highlight.configure({ multicolor: true }),
             HorizontalRule,
+
+            Image,
+            ImageUpload.configure({
+                upload: (files: File) => {
+                    return new Promise(resolve => {
+                        setTimeout(() => {
+                            resolve(URL.createObjectURL(files))
+                        }, 500)
+                    })
+                },
+            }),
 
             TaskList,
             TaskItem.configure({

@@ -1,9 +1,8 @@
 import { Box } from '@mui/material'
 import type { Except } from 'type-fest'
 
-import ControlledBubbleMenu, {
-    type ControlledBubbleMenuProps,
-} from '@/components/ControlledBubbleMenu'
+import type { ControlledBubbleMenuProps } from '@/components/ControlledBubbleMenu'
+import ControlledBubbleMenu from '@/components/ControlledBubbleMenu'
 import {
     type LinkBubbleMenuHandlerStorage,
     LinkMenuState,

@@ -103,6 +103,10 @@ export {
     type MenuButtonUnindentProps,
 } from './MenuButtonUnindent'
 export {
+    default as MenuButtonUploadImage,
+    type MenuButtonUploadImageProps,
+} from './MenuButtonUploadImage'
+export {
     default as MenuControlsContainer,
     type MenuControlsContainerProps,
 } from './MenuControlsContainer'

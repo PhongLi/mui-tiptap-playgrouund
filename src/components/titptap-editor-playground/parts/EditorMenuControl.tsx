@@ -23,6 +23,7 @@ import {
     MenuButtonUnderline,
     MenuButtonUndo,
     MenuButtonUnindent,
+    MenuButtonUploadImage,
     MenuControlsContainer,
     MenuSelectFontFamily,
     MenuSelectFontSize,
@@ -40,7 +41,7 @@ const MenuDivider = styled(props => (
 export default function EditorMenuControls() {
     const theme = useTheme()
     return (
-        <MenuControlsContainer>
+        <MenuControlsContainer debounced>
             <MenuSelectFontFamily
                 options={[
                     { label: 'Comic Sans', value: 'Comic Sans MS, Comic Sans' },
@@ -93,7 +94,6 @@ export default function EditorMenuControls() {
                     { value: '#dddddd', label: 'Light grey' },
                     { value: '#ffa6a6', label: 'Light red' },
                     { value: '#ffd699', label: 'Light orange' },
-                    // Plain yellow matches the browser default `mark` like when using Cmd+Shift+H
                     { value: '#ffff00', label: 'Yellow' },
                     { value: '#99cc99', label: 'Light green' },
                     { value: '#90c6ff', label: 'Light blue' },
@@ -130,7 +130,9 @@ export default function EditorMenuControls() {
             <MenuButtonBlockquote />
 
             <MenuDivider />
-            {/* image */}
+
+            <MenuButtonUploadImage />
+
             <MenuDivider />
 
             <MenuButtonHorizontalRule />

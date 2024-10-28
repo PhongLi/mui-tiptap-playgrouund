@@ -1,6 +1,6 @@
 import type { DebouncedFunc, DebounceSettings } from 'lodash'
 import debounce from 'lodash/debounce'
-import { useEffect, useRef, useState } from 'react'
+import { Component } from 'react'
 
 export type DebounceRenderProps = {
     /**
@@ -16,39 +16,35 @@ export type DebounceRenderProps = {
     /** Content to render at debounced intervals as props change */
     children: React.ReactNode
 }
+export default class DebounceRender extends Component<DebounceRenderProps> {
+    // Similar to the approach from
+    // https://github.com/podefr/react-debounce-render, except as a component
+    // instead of an HOC.
+    public updateDebounced: DebouncedFunc<() => void>
 
-function DebounceRender({
-    wait = 170,
-    options = { leading: true, trailing: true, maxWait: 300 },
-    children,
-}: DebounceRenderProps) {
-    const updateDebouncedRef = useRef<DebouncedFunc<() => void>>()
-    const [, setForceUpdate] = useState(false)
-
-    const forceUpdate = () => {
-        setForceUpdate(prev => !prev)
+    constructor(props: DebounceRenderProps) {
+        super(props)
+        this.updateDebounced = debounce(
+            this.forceUpdate,
+            props.wait ?? 170,
+            props.options ?? {
+                leading: true,
+                trailing: true,
+                maxWait: 300,
+            },
+        )
     }
 
-    useEffect(() => {
-        updateDebouncedRef.current = debounce(
-            () => forceUpdate(),
-            wait,
-            options,
-        )
+    shouldComponentUpdate() {
+        this.updateDebounced()
+        return false
+    }
 
-        return () => {
-            updateDebouncedRef.current?.cancel()
-        }
-    }, [wait, options])
+    componentWillUnmount() {
+        this.updateDebounced.cancel()
+    }
 
-    useEffect(() => {
-        updateDebouncedRef.current?.()
-        return () => {
-            updateDebouncedRef.current?.cancel()
-        }
-    }, [])
-
-    return children
+    render() {
+        return this.props.children
+    }
 }
-
-export default DebounceRender

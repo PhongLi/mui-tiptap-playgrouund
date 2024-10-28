@@ -42,7 +42,6 @@ const StyledPopper = styled(Popper)(() => ({
 
 export function ColorPickerPopperBody({
     value,
-    onCancel,
     onSave,
     swatchColors,
     labels = {},
@@ -51,19 +50,11 @@ export function ColorPickerPopperBody({
     const {
         removeColorButton = 'None',
         removeColorButtonTooltipTitle = '',
-        cancelButton = 'Cancel',
         saveButton = 'OK',
     } = labels
 
-    // Because color can change rapidly as the user drags the color in the
-    // ColorPicker gradient, we'll wait until "Save" to call the onSave prop, and
-    // we'll store an internal localColor until then. (This could alternatively be
-    // implemented such that we "save" directly whenever a swatch preset is
-    // clicked, by looking at the `source` from `ColorPicker.onChange`, but it may
-    // be useful to tweak a color from a swatch before saving.)
     const [localColor, setLocalColor] = useState<string>(value)
-    // Update our internal value whenever the `color` prop changes (since this is
-    // a controlled component)
+
     useEffect(() => {
         setLocalColor(value)
     }, [value])
@@ -91,8 +82,6 @@ export function ColorPickerPopperBody({
                         fullWidth
                         variant='outlined'
                         onClick={() => {
-                            // No color being specified can mean "none" in some scenarios
-                            // (e.g. highlighting) and "default color"/reset in others (text)
                             onSave('')
                         }}
                         size='small'
@@ -101,10 +90,6 @@ export function ColorPickerPopperBody({
                         {removeColorButton}
                     </Button>
                 </Tooltip>
-
-                {/* <Button onClick={onCancel} size='small'>
-                    {cancelButton}
-                </Button> */}
 
                 <Button
                     fullWidth
